@@ -7410,11 +7410,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/roa/Documents/Asp/URL_Shortener_Micro/UrlService/UrlService.csproj",
-      "projectName": "UrlService",
-      "projectPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/UrlService/UrlService.csproj",
+      "projectUniqueName": "/home/roa/Documents/Asp/URL_Shortener_Micro/DomainService/DomainService.csproj",
+      "projectName": "DomainService",
+      "projectPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/DomainService/DomainService.csproj",
       "packagesPath": "/home/roa/.nuget/packages/",
-      "outputPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/UrlService/obj/",
+      "outputPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/DomainService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/roa/.nuget/NuGet/NuGet.Config"

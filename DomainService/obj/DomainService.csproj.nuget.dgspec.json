@@ -1,77 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/roa/Documents/Asp/URL_Shortener_Micro/UrlService/UrlService.csproj": {}
+    "/home/roa/Documents/Asp/URL_Shortener_Micro/DomainService/DomainService.csproj": {}
   },
   "projects": {
-    "/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/SharedContracts.csproj": {
+    "/home/roa/Documents/Asp/URL_Shortener_Micro/DomainService/DomainService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/SharedContracts.csproj",
-        "projectName": "SharedContracts",
-        "projectPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/SharedContracts.csproj",
+        "projectUniqueName": "/home/roa/Documents/Asp/URL_Shortener_Micro/DomainService/DomainService.csproj",
+        "projectName": "DomainService",
+        "projectPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/DomainService/DomainService.csproj",
         "packagesPath": "/home/roa/.nuget/packages/",
-        "outputPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/roa/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "/usr/lib/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/home/roa/Documents/Asp/URL_Shortener_Micro/UrlService/UrlService.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/roa/Documents/Asp/URL_Shortener_Micro/UrlService/UrlService.csproj",
-        "projectName": "UrlService",
-        "projectPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/UrlService/UrlService.csproj",
-        "packagesPath": "/home/roa/.nuget/packages/",
-        "outputPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/UrlService/obj/",
+        "outputPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/DomainService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/roa/.nuget/NuGet/NuGet.Config"
@@ -169,6 +109,66 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/SharedContracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/SharedContracts.csproj",
+        "projectName": "SharedContracts",
+        "projectPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/SharedContracts.csproj",
+        "packagesPath": "/home/roa/.nuget/packages/",
+        "outputPath": "/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/roa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

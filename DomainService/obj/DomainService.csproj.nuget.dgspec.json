@@ -57,9 +57,21 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.4.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             },
             "Polly": {
               "target": "Package",
@@ -83,15 +95,19 @@
             },
             "WolverineFx": {
               "target": "Package",
-              "version": "[4.10.1, )"
+              "version": "[4.11.0, )"
             },
-            "WolverineFx.RDBMS": {
+            "WolverineFx.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[4.10.1, )"
+              "version": "[4.11.0, )"
+            },
+            "WolverineFx.Postgresql": {
+              "target": "Package",
+              "version": "[4.11.0, )"
             },
             "WolverineFx.RabbitMQ": {
               "target": "Package",
-              "version": "[4.10.1, )"
+              "version": "[4.11.0, )"
             }
           },
           "imports": [
@@ -157,6 +173,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

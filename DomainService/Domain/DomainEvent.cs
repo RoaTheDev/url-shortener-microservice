@@ -1,6 +1,6 @@
 using SharedContracts;
 
-namespace DomainService.Domain.Entity;
+namespace DomainService.Domain;
 
 public class DomainEvent
 {

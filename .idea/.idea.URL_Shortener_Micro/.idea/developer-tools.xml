@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DeveloperToolsToolWindowSettingsV1" lastSelectedContentNodeId="regular-expression-matcher" pluginVersion="7.1.0">
+    <developerToolsConfigurations>
+      <developerToolConfiguration developerToolId="regular-expression-matcher" id="8852c6f1-a3c3-47ec-9fc8-29252bbb7cd2" name="Workbench">
+        <properties>
+          <property key="inputText" type="INPUT" value="kotlin.String|geeksforgeeks.org" />
+          <property key="regexText" type="INPUT" value="kotlin.String|^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$" />
+        </properties>
+      </developerToolConfiguration>
+    </developerToolsConfigurations>
+  </component>
+</project>

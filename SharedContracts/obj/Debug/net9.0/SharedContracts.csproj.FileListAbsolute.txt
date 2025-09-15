@@ -1,0 +1,13 @@
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/bin/Debug/net9.0/SharedContracts.deps.json
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/bin/Debug/net9.0/SharedContracts.dll
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/bin/Debug/net9.0/SharedContracts.pdb
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/SharedContracts.csproj.AssemblyReference.cache
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/SharedContracts.GeneratedMSBuildEditorConfig.editorconfig
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/SharedContracts.AssemblyInfoInputs.cache
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/SharedContracts.AssemblyInfo.cs
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/SharedContracts.csproj.CoreCompileInputs.cache
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/SharedContracts.sourcelink.json
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/SharedContracts.dll
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/refint/SharedContracts.dll
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/SharedContracts.pdb
+/home/roa/Documents/Asp/URL_Shortener_Micro/SharedContracts/obj/Debug/net9.0/ref/SharedContracts.dll

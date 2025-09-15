@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jvtgz5Bvg08=",
+  "dgSpecHash": "6BcjjSIqOvU=",
   "success": true,
   "projectFilePath": "/home/roa/Documents/Asp/URL_Shortener_Micro/DomainService/DomainService.csproj",
   "expectedPackageFiles": [
@@ -83,7 +83,7 @@
     "/home/roa/.nuget/packages/polly.core/8.6.3/polly.core.8.6.3.nupkg.sha512",
     "/home/roa/.nuget/packages/rabbitmq.client/7.1.2/rabbitmq.client.7.1.2.nupkg.sha512",
     "/home/roa/.nuget/packages/runtime.native.system/4.3.0/runtime.native.system.4.3.0.nupkg.sha512",
-    "/home/roa/.nuget/packages/scalar.aspnetcore/2.7.2/scalar.aspnetcore.2.7.2.nupkg.sha512",
+    "/home/roa/.nuget/packages/scalar.aspnetcore/2.8.3/scalar.aspnetcore.2.8.3.nupkg.sha512",
     "/home/roa/.nuget/packages/serilog/4.3.0/serilog.4.3.0.nupkg.sha512",
     "/home/roa/.nuget/packages/serilog.aspnetcore/9.0.0/serilog.aspnetcore.9.0.0.nupkg.sha512",
     "/home/roa/.nuget/packages/serilog.extensions.hosting/9.0.0/serilog.extensions.hosting.9.0.0.nupkg.sha512",

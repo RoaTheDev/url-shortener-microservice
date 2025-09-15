@@ -1,11 +1,11 @@
 using DomainService.Application.Commands;
 using DomainService.Application.Dto;
+using DomainService.Application.Dto.Request;
 using DomainService.Application.Queries;
 using Microsoft.AspNetCore.Mvc;
 using Wolverine;
 
 namespace DomainService.Adapter;
-
 
 [ApiController]
 [Route("api/[controller]")]
@@ -17,25 +17,27 @@ public class DomainsController : ControllerBase
     {
         _messageBus = messageBus;
     }
+
     [HttpGet("{id}")]
-    public async Task<ActionResult<DomainDto>> GetDomain(Guid id)
+    public async Task<ActionResult<DomainDto>> GetDomain([FromRoute]Guid id)
     {
         var query = new GetDomainByIdQuery(id);
         var result = await _messageBus.InvokeAsync<DomainDto?>(query);
-        
+
         return result == null ? NotFound() : Ok(result);
     }
 
     [HttpGet("user/{userId}")]
     public async Task<ActionResult<PagedResult<DomainSummaryDto>>> GetUserDomains(
-        string userId, 
-        [FromQuery] int skip = 0, 
+        string userId,
+        [FromQuery] int skip = 0,
         [FromQuery] int take = 50)
     {
         var query = new GetDomainsByUserQuery(userId, skip, take);
         var result = await _messageBus.InvokeAsync<PagedResult<DomainSummaryDto>>(query);
         return Ok(result);
     }
+
     [HttpPost]
     public async Task<ActionResult<DomainDto>> CreateDomain([FromBody] CreateDomainCommand request)
     {
@@ -50,12 +52,14 @@ public class DomainsController : ControllerBase
             return BadRequest(new { error = ex.Message });
         }
     }
+
     [HttpPut("{id}/name")]
-    public async Task<IActionResult> UpdateDomainName(Guid id, [FromBody] UpdateDomainNameCommand request)
+    public async Task<IActionResult> UpdateDomainName(Guid id, [FromBody] UpdateDomainNameRequest request)
     {
         try
         {
-            await _messageBus.InvokeAsync(request);
+            var command = new UpdateDomainNameCommand(id, request.NewDomainName, request.UserId);
+            await _messageBus.InvokeAsync(command);
             return Ok();
         }
         catch (InvalidOperationException ex)

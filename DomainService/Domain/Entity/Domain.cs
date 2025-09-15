@@ -36,6 +36,7 @@ public class Domain : DomainEvent
             IsVerified = false,
             VerificationToken = GenerateRandomToken()
         };
+        domain._domainEvents.Add(new DomainCreatedEvent(domain.Id, domain.DomainName, domain.UserId));
         return domain;
     }
 

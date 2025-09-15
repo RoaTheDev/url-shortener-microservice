@@ -14,17 +14,16 @@ public static class ExternalConfig
 {
     public static void AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("ConnectionStr")));
+        services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("ConnectionStr")),
+            optionsLifetime: ServiceLifetime.Singleton);
     }
 
     public static void AddMapster(this IServiceCollection services) => services.AddTransient<IMapper, Mapper>();
 
-    public static IHostBuilder AddWolverineWithOutbox(this IHostBuilder host, IConfiguration config)
+    public static void AddWolverineWithOutbox(this IHostBuilder host, IConfiguration config)
     {
         host.UseWolverine(opts =>
         {
-            opts.Policies.UseDurableLocalQueues();
-
             opts.UseRabbitMq(rmq =>
                 {
                     rmq.HostName = config["RabbitMQ:Host"]!;
@@ -34,13 +33,20 @@ public static class ExternalConfig
                     rmq.VirtualHost = config["RabbitMQ:VirtualHost"]!;
                 })
                 .AutoProvision()
-                .BindExchange("domain-events").ToQueue("inventory-service-queue");
+                .BindExchange("domain-events").ToQueue("domain-service-queue");
+            opts.PublishAllMessages().ToRabbitExchange("domain-events").UseDurableOutbox();
+            // opts.ListenToRabbitQueue("domain-service-queue");
 
-            opts.PublishAllMessages().ToRabbitExchange("domain-events");
 
             opts.PersistMessagesWithPostgresql(config.GetConnectionString("ConnectionStr")!);
             opts.UseEntityFrameworkCoreTransactions();
-
+            
+            opts.Durability.Mode = DurabilityMode.Balanced;
+            opts.Durability.KeepAfterMessageHandling = TimeSpan.FromHours(1);
+            
+            opts.Policies.AutoApplyTransactions();
+            opts.Policies.UseDurableOutboxOnAllSendingEndpoints();
+            opts.Policies.UseDurableInboxOnAllListeners();
             opts.Policies.OnException<ValidationException>()
                 .RetryWithCooldown(
                     TimeSpan.FromMilliseconds(100),
@@ -48,6 +54,5 @@ public static class ExternalConfig
                     TimeSpan.FromMilliseconds(500)
                 );
         });
-        return host;
     }
 }

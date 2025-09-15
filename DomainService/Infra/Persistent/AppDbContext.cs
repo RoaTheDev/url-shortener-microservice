@@ -16,14 +16,14 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.Property(d => d.IsDeleted).HasColumnName("is_deleted");
             e.Property(d => d.VerificationToken).HasColumnName("verification_token").HasMaxLength(100);
             e.Property(d => d.UserId).HasColumnName("user_id").HasMaxLength(150).IsRequired();
-            e.Property(d => d.CreatedAt).HasColumnName("created_at").HasDefaultValue(DateTime.UtcNow);
+            e.Property(d => d.CreatedAt).HasColumnName("created_at");
             e.Property(d => d.UpdatedAt).HasColumnName("updated_at").IsRequired(false);
             e.Property(d => d.IsVerified).HasColumnName("is_verified").HasDefaultValue(false);
             e.Property(d => d.IsDeleted).HasColumnName("is_deleted").HasDefaultValue(false);
 
             e.Ignore(d => d.Events);
         });
-     
+        // modelBuilder.MapWolverineEnvelopeStorage();
         base.OnModelCreating(modelBuilder);
     }
 }

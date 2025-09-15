@@ -1789,7 +1789,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Scalar.AspNetCore/2.7.2": {
+      "Scalar.AspNetCore/2.8.3": {
         "type": "package",
         "compile": {
           "lib/net9.0/Scalar.AspNetCore.dll": {
@@ -5778,10 +5778,10 @@
         "runtime.native.system.nuspec"
       ]
     },
-    "Scalar.AspNetCore/2.7.2": {
-      "sha512": "MtxRKvCqmzoH7LQe2GLfo2rAjYix+2G2GwTaKjLThySOPwU99vf0VefSWt5tOAEz/wS7qD87lm1Bu92oZyjr8w==",
+    "Scalar.AspNetCore/2.8.3": {
+      "sha512": "5O6bNUqg0vIYwajaza0OCLu6p0ibEUNx9lqxwGXMWAn/ZhisAo1phwSNRA+OTi1XhRzkz+FvfzFkM5lVzx11vQ==",
       "type": "package",
-      "path": "scalar.aspnetcore/2.7.2",
+      "path": "scalar.aspnetcore/2.8.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5793,7 +5793,7 @@
         "lib/net8.0/Scalar.AspNetCore.xml",
         "lib/net9.0/Scalar.AspNetCore.dll",
         "lib/net9.0/Scalar.AspNetCore.xml",
-        "scalar.aspnetcore.2.7.2.nupkg.sha512",
+        "scalar.aspnetcore.2.8.3.nupkg.sha512",
         "scalar.aspnetcore.nuspec"
       ]
     },
@@ -8239,7 +8239,7 @@
       "Microsoft.EntityFrameworkCore >= 9.0.9",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.4",
       "Polly >= 8.6.3",
-      "Scalar.AspNetCore >= 2.7.2",
+      "Scalar.AspNetCore >= 2.8.3",
       "Serilog >= 4.3.0",
       "Serilog.AspNetCore >= 9.0.0",
       "Serilog.Sinks.Seq >= 9.0.0",
@@ -8328,7 +8328,7 @@
           },
           "Scalar.AspNetCore": {
             "target": "Package",
-            "version": "[2.7.2, )"
+            "version": "[2.8.3, )"
           },
           "Serilog": {
             "target": "Package",

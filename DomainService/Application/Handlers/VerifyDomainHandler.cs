@@ -1,5 +1,5 @@
 using DomainService.Application.Commands;
-using DomainService.Application.Dto.Result;
+using DomainService.Application.Dto.Response;
 using DomainService.Infra.Persistent;
 using Microsoft.EntityFrameworkCore;
 using Wolverine;

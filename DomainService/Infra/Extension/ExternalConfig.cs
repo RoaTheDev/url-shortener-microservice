@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using DomainService.Infra.Persistent;
 using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using Wolverine;
 using Wolverine.EntityFrameworkCore;
 using Wolverine.ErrorHandling;
@@ -19,6 +20,16 @@ public static class ExternalConfig
     }
 
     public static void AddMapster(this IServiceCollection services) => services.AddTransient<IMapper, Mapper>();
+
+    public static void AddSerilogConfig(this IHostBuilder host, string serviceName = "DomainService") =>
+        host.UseSerilog((context, config) => 
+        {
+            config
+                .ReadFrom.Configuration(context.Configuration)
+                .Enrich.WithProperty("ServiceName", serviceName)  
+                .Enrich.WithProperty("Version", GetVersion())      
+                .Enrich.WithProperty("Environment", context.HostingEnvironment.EnvironmentName);
+        });
 
     public static void AddWolverineWithOutbox(this IHostBuilder host, IConfiguration config)
     {
@@ -40,10 +51,10 @@ public static class ExternalConfig
 
             opts.PersistMessagesWithPostgresql(config.GetConnectionString("ConnectionStr")!);
             opts.UseEntityFrameworkCoreTransactions();
-            
+
             opts.Durability.Mode = DurabilityMode.Balanced;
             opts.Durability.KeepAfterMessageHandling = TimeSpan.FromHours(1);
-            
+
             opts.Policies.AutoApplyTransactions();
             opts.Policies.UseDurableOutboxOnAllSendingEndpoints();
             opts.Policies.UseDurableInboxOnAllListeners();
@@ -54,5 +65,10 @@ public static class ExternalConfig
                     TimeSpan.FromMilliseconds(500)
                 );
         });
+    }
+    private static string GetVersion()
+    {
+        return System.Reflection.Assembly.GetExecutingAssembly()
+            .GetName().Version?.ToString() ?? "1.0.0";
     }
 }

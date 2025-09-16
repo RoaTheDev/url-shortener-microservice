@@ -1,18 +1,14 @@
 using DomainService.Application.Dto;
+using DomainService.Application.Dto.Response;
 using DomainService.Application.Queries;
 using DomainService.Infra.Persistent;
 using Microsoft.EntityFrameworkCore;
+using Wolverine;
 
 namespace DomainService.Application.Handlers;
 
-public static class DomainQueryHandlers
+public class DomainQueryHandlers : IWolverineHandler
 {
-    /// <summary>
-    /// Get by domain id 
-    /// </summary>
-    /// <param name="query">GetByDomainIdQuery</param>
-    /// <param name="context"></param>
-    /// <returns></returns>
     public static async Task<DomainDto?> Handle(GetDomainByIdQuery query, AppDbContext context)
     {
         return await context.Domains

@@ -1,4 +1,4 @@
-namespace DomainService.Application.Dto;
+namespace DomainService.Application.Dto.Response;
 public record DomainSummaryDto
 {
     public Guid Id { get; init; }

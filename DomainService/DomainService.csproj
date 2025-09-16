@@ -25,6 +25,8 @@
         <PackageReference Include="WolverineFx.RabbitMQ" Version="4.11.0" />
     </ItemGroup>
 
+
+
     <ItemGroup>
         <Content Include="..\.dockerignore">
             <Link>.dockerignore</Link>

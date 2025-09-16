@@ -1,6 +1,7 @@
 using DomainService.Application.Commands;
 using DomainService.Application.Dto;
 using DomainService.Application.Dto.Request;
+using DomainService.Application.Dto.Response;
 using DomainService.Application.Queries;
 using Microsoft.AspNetCore.Mvc;
 using Wolverine;
@@ -19,7 +20,7 @@ public class DomainsController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<DomainDto>> GetDomain([FromRoute]Guid id)
+    public async Task<ActionResult<DomainDto>> GetDomain([FromRoute] Guid id)
     {
         var query = new GetDomainByIdQuery(id);
         var result = await _messageBus.InvokeAsync<DomainDto?>(query);
@@ -29,7 +30,7 @@ public class DomainsController : ControllerBase
 
     [HttpGet("user/{userId}")]
     public async Task<ActionResult<PagedResult<DomainSummaryDto>>> GetUserDomains(
-        string userId,
+        [FromRoute] string userId,
         [FromQuery] int skip = 0,
         [FromQuery] int take = 50)
     {
@@ -54,7 +55,7 @@ public class DomainsController : ControllerBase
     }
 
     [HttpPut("{id}/name")]
-    public async Task<IActionResult> UpdateDomainName(Guid id, [FromBody] UpdateDomainNameRequest request)
+    public async Task<IActionResult> UpdateDomainName([FromRoute] Guid id, [FromBody] UpdateDomainNameRequest request)
     {
         try
         {
@@ -69,7 +70,7 @@ public class DomainsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteDomain(Guid id, [FromQuery] string userId)
+    public async Task<IActionResult> DeleteDomain([FromRoute] Guid id, [FromQuery] string userId)
     {
         try
         {
@@ -84,9 +85,10 @@ public class DomainsController : ControllerBase
     }
 
     [HttpPost("{id}/verify")]
-    public async Task<ActionResult<bool>> VerifyDomain(Guid id, [FromBody] VerifyDomainCommand request)
+    public async Task<ActionResult<bool>> VerifyDomain([FromRoute] Guid id, [FromBody] VerifyDomainRequest request)
     {
-        var result = await _messageBus.InvokeAsync<bool>(request);
+        var command = new VerifyDomainCommand(id, request.VerificationToken, request.UserId);
+        var result = await _messageBus.InvokeAsync<bool>(command);
         return Ok(new { verified = result });
     }
 
